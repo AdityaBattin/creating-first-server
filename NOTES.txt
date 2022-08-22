@@ -1,0 +1,10 @@
+diffrence between dev dependencies and dependencies
+Dev-depen : The dependencies which we need just for development perposes
+Dependencies : always needed for running the program
+
+     Dependencies          *       Dev-Dependencies
+                           *
+      package.json         *           nodemon
+        node               *
+                           *
+                           
