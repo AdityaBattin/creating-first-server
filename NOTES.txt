@@ -8,3 +8,14 @@ Dependencies : always needed for running the program
         node               *
                            *
                            
+ROUTING : 
+Creating multiple gateways (Netwrking in node.js)
+we want to create multiple gateways.
+
+for it req should be broken down by using the decomposition in JS into methords and URL
+
+HTTP Methords : 
+1. GET 
+2. POST
+3. PATCH
+4. PUT
