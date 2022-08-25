@@ -5,7 +5,7 @@ Dependencies : always needed for running the program
      Dependencies          *       Dev-Dependencies
                            *
       package.json         *           nodemon
-        node               *
+      express              *
                            *
                            
 ROUTING : 
@@ -19,3 +19,14 @@ HTTP Methords :
 2. POST
 3. PATCH
 4. PUT
+5. DELETE
+
+Web related Frunt-end requires rendering
+There are two types of rendering
+1. CSR Client Side rendering : Computation happens on the Client web browser.
+                               always it sends HTML, CSS and JS -> Js in Large Amount
+                               so no need of refreshing the page every time.
+2. SSR Server Side rendering : Computation happens on the Server side.
+                               every time it sends HTML , CSS and JS
+                               for every page you go on your website.
+

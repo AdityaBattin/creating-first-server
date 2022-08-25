@@ -29,14 +29,48 @@ http
       } else if (method === "POST") {
         let body = "";
         req
-          .on("error", () => {})
+          .on("error", (err) => {
+            console.error(err);
+          })
           .on("data", (chunk) => {
             body += chunk; //adding data onto body
             console.log(chunk);
           })
           .on("end", () => {
             body = JSON.parse(body);
-            console.log("data : ", body);
+            let newtoDo = todoList;
+            newtoDo.push(body.item);
+            console.log(newtoDo);
+            res.writeHead(201);
+          });
+      } else if (method === "DELETE") {
+        let body = "";
+        req
+          .on("error", (err) => {
+            console.error(err);
+          })
+          .on("data", (chunk) => {
+            body += chunk;
+          })
+          .on("end", () => {
+            body = JSON.parse(body); //converting it and storing it in the same variable
+            let deletethis = body.item;
+
+            // TO traverse an array and delete an item
+            // for (let i = 0; i < todoList.length; i++) {
+            //   if (todoList[i] === deletethis) {
+            //     todoList.splice(i, 1);
+            //     break;
+            //   }
+            // }
+
+            // different methodology
+            todoList.find((element, index) => {
+              if (element === deletethis) {
+                todoList.splice(index, 1); // to delete an item on index i
+              }
+            });
+            res.writeHead(202);
           });
       } else {
         res.write("<h1>  ERROR  :(  </h1>");
